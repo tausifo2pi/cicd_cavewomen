@@ -1,4 +1,4 @@
-name: cicd-infra
+name: cicd-cavewomen
 runtime:
   name: nodejs
   options:
