@@ -9,7 +9,7 @@ app.get('/health', (req, res) => {
     res.json({ status: 'ok' });
 });
 
-app.get('/', (req, res) => {
+app.use('/', (req, res) => {
     res.json({ message: process.env.MESSAGE || 'Hello World' });
 });
 
