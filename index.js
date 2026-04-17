@@ -10,7 +10,7 @@ app.get('/health', (req, res) => {
 });
 
 app.use('/', (req, res) => {
-    res.json({ message: process.env.MESSAGE || 'Hello World' });
+    res.send(`<h1>${process.env.MESSAGE}</h1>`);
 });
 
 const port = process.env.PORT || 5000;
