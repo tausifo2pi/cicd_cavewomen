@@ -45,7 +45,7 @@ After `pulumi up` finishes:
 
 ```bash
 # SSH key must be pushed directly — multiline PEM breaks push-secrets.sh
-gh secret set SSH_PRIVATE_KEY < infra/your-app-name.pem --repo your-user/your-repo
+gh secret set SSH_PRIVATE_KEY < infra/cavewomen.pem --repo tausifo2pi/cicd_cavewomen
 
 # push remaining CI secrets
 npm run push-ci-secrets
@@ -56,14 +56,14 @@ npm run push-ci-secrets
 ## 4. One-time EC2 Setup (run once in order)
 
 ```bash
-npm run workflow:transfer   # upload nginx.conf, docker-compose.yml, scripts to EC2
-npm run workflow:setup      # install Docker + Docker Compose on EC2
+npm run workflow:transfer   
+npm run workflow:setup     
 ```
 
 Point domain DNS A record to the EC2 IP, then:
 
 ```bash
-npm run workflow:ssl        # generate Let's Encrypt SSL cert
+npm run workflow:ssl       
 ```
 
 ---
@@ -71,7 +71,7 @@ npm run workflow:ssl        # generate Let's Encrypt SSL cert
 ## 5. Deploy
 
 ```bash
-git push origin main        # auto-triggers build + deploy + cleanup
+git push origin main       
 ```
 
 Or manually:
